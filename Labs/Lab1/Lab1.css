@@ -1,1 +1,110 @@
+/* 
+    Author: andrick Luther
+    Date: 3rd of March 2024
+    Description: html and css combination in creating website _ Lab1
+*/
 
+/* Reset default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid Layout Container - UPDATED */
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Three equal columns */
+    grid-template-rows: 120px 40px auto 60px;  /* Reduced nav and footer height */
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"           /* Navigation in its own row under header */
+        "content content sidebar"
+        "footer footer footer";
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    gap: 5px;                   /* Small gap between sections */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #228915;
+    color: rgb(224, 231, 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation Menu Section */
+.nav {
+    grid-area: nav;
+    background-color: #f8f3f3;
+    padding: 0;                  /* Remove padding */
+    border-radius: 5px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;               /* Makes menu horizontal */
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;                /* Fill nav area */
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-bottom: 0;             /* Remove bottom margin */
+    flex: 1;                      /* Equal width items */
+    text-align: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #080808;
+    font-weight: bold;
+    display: block;               /* Full clickable area */
+    padding: 8px 0;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover {
+    background-color: #7f7575;       /* Hover effect */
+}
+
+/* Main Content */
+.content {
+    grid-area: content;
+    padding: 20px;
+    background-color: #7cdff0;
+    border: 1px solid #3e0f0f;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #87e4eb;
+    padding: 20px;
+    border-left: 1px solid #6f2d2d;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #168318;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optional: Add a border to see the navigation area clearly */
+.nav {
+    border: 1px solid #883b3b;
+    border-radius: 5px;
+}
